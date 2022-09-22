@@ -159,12 +159,12 @@ void desenhaCastelo(void){
     glEnd();
 
     // porta
-    glColor3f(0.5, 0.5, 0.5); // cinza
+    glColor3f(0.5, 0.2, 0.2); // marrom
     glBegin(GL_POLYGON);
-        glVertex2f(60.0, 300.0);
-        glVertex2f(350.0, 300.0);
-        glVertex2f(350.0, 400.0);
-        glVertex2f(60.0, 400.0);
+        glVertex2f(200.0, 300.0);
+        glVertex2f(250.0, 300.0);
+        glVertex2f(250.0, 350.0);
+        glVertex2f(200.0, 350.0);
     glEnd();
 }
 
