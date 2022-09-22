@@ -110,6 +110,66 @@ void Timer(int value) {
     glutTimerFunc(180, Timer, value + 1); //Value recebe o valor anterior + 1, alterando nosso time stamp
 }
 
+void desenhaCastelo(void){
+    glColor3f(0.5, 0.2, 0.2); //marrom
+
+    // Torre da direita
+        //Teto
+        glBegin(GL_TRIANGLES);
+            glVertex2f(350 + 0.0,           300.0);
+            glVertex2f(350 + (100.0+0.0)/2, 200.0);
+            glVertex2f(350 + 100.0,         300.0);
+        glEnd();
+
+        glColor3f(0.5, 0.5, 0.5); // cinza
+
+        // coluna
+        glBegin(GL_POLYGON);
+            glVertex2f(350.0, 300.0);
+            glVertex2f(450.0, 300.0);
+            glVertex2f(450.0, 400.0);
+            glVertex2f(350.0, 400.0);
+        glEnd();
+
+    //Torre da esquerda
+        //Teto
+        glColor3f(0.5, 0.2, 0.2); // marrom
+        glBegin(GL_TRIANGLES);
+            glVertex2f(50 + 0.0,           300.0);
+            glVertex2f(50 + (100.0+0.0)/2, 200.0);
+            glVertex2f(50 + 100.0,         300.0);
+        glEnd();
+
+        // coluna
+        glColor3f(0.5, 0.5, 0.5); // cinza
+        glBegin(GL_POLYGON);
+            glVertex2f(50.0, 300.0);
+            glVertex2f(150.0, 300.0);
+            glVertex2f(150.0, 400.0);
+            glVertex2f(50.0, 400.0);
+        glEnd();
+
+    // frente
+    glColor3f(0.5, 0.5, 0.5); // cinza
+    glBegin(GL_POLYGON);
+        glVertex2f(60.0, 300.0);
+        glVertex2f(350.0, 300.0);
+        glVertex2f(350.0, 400.0);
+        glVertex2f(60.0, 400.0);
+    glEnd();
+
+    // porta
+    glColor3f(0.5, 0.5, 0.5); // cinza
+    glBegin(GL_POLYGON);
+        glVertex2f(60.0, 300.0);
+        glVertex2f(350.0, 300.0);
+        glVertex2f(350.0, 400.0);
+        glVertex2f(60.0, 400.0);
+    glEnd();
+}
+
+
+
 //Função callback chamada para fazer o desenho
 void Desenha(void) {
 
@@ -117,6 +177,8 @@ void Desenha(void) {
 
     //Limpa a janela de visualização com a cor de fundo especificada
     glClear(GL_COLOR_BUFFER_BIT);
+
+    desenhaCastelo();
 
     //Define a cor da linha, os parametros sao as cores (R, G, B) e variam de 0-1
     glColor3f(0.0, 0.0, 0.0);
@@ -174,34 +236,8 @@ void Desenha(void) {
     //Executa os comandos OpenGL
 
     //Define a cor da linha, os parametros sao as cores (R, G, B) e variam de 0-1
-    glColor3f(1.0, 0.0, 0.0);
 
-    //Teto
-    glBegin(GL_TRIANGLES);
-        glVertex2f(200.0, 100.0);
-        glVertex2f(200.0, 200.0);
-        glVertex2f(200.0, 100.0);
-    glEnd();
-
-    glColor3f(1.0, 1.0, 0.0);
-
-    // frente
-    glBegin(GL_POLYGON);
-        glVertex2f(100.0, 100.0);
-        glVertex2f(100.0, 100.0);
-        glVertex2f(100.0, 100.0);
-        glVertex2f(100.0, 100.0);
-    glEnd();
-
-    glColor3f(1.0, 1.0, 0.0);
-
-    // porta
-    glBegin(GL_POLYGON);
-        glVertex2f(100.0, 100.0);
-        glVertex2f(100.0, 100.0);
-        glVertex2f(100.0, 100.0);
-        glVertex2f(100.0, 100.0);
-    glEnd();
+    
 
     //Executa os comandos OpenGL
     glFlush();
