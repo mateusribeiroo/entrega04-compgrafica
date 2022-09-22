@@ -223,17 +223,7 @@ void desenhaCastelo(void){
 }
 
 
-
-//Função callback chamada para fazer o desenho
-void Desenha(void) {
-
-    glViewport(0, 0, 500, 500);
-
-    //Limpa a janela de visualização com a cor de fundo especificada
-    glClear(GL_COLOR_BUFFER_BIT);
-
-    desenhaCastelo();
-
+void desenhaBoneco(){
     //Define a cor da linha, os parametros sao as cores (R, G, B) e variam de 0-1
     glColor3f(0.0, 0.0, 0.0);
 
@@ -287,14 +277,20 @@ void Desenha(void) {
         glVertex2i(300, 500);
     glEnd();
 
-    //Executa os comandos OpenGL
-
-    //Define a cor da linha, os parametros sao as cores (R, G, B) e variam de 0-1
-
-    
-
-    //Executa os comandos OpenGL
     glFlush();
+}
+
+
+//Função callback chamada para fazer o desenho
+void Desenha(void) {
+
+    glViewport(0, 0, 500, 500);
+
+    //Limpa a janela de visualização com a cor de fundo especificada
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    desenhaCastelo();
+    desenhaBoneco();
 }
 
 void Inicializa(void) {
