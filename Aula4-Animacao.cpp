@@ -131,6 +131,9 @@ void desenhaCastelo(void){
             glVertex2f(350.0, 400.0);
         glEnd();
 
+
+        
+
     //Torre da esquerda
         //Teto
         glColor3f(0.5, 0.2, 0.2); // marrom
@@ -146,6 +149,16 @@ void desenhaCastelo(void){
             glVertex2f(50.0, 300.0);
             glVertex2f(150.0, 300.0);
             glVertex2f(150.0, 400.0);
+            glVertex2f(50.0, 400.0);
+        glEnd();
+
+        glColor3f(0.0, 0.0, 0.0); // preto
+        
+
+        glColor3f(0.0, 0.0, 0.0); // preto
+        // margem esquerda
+        glBegin(GL_LINES);
+            glVertex2f(50.0, 300.0);
             glVertex2f(50.0, 400.0);
         glEnd();
 
@@ -166,6 +179,47 @@ void desenhaCastelo(void){
         glVertex2f(275.0, 400.0);
         glVertex2f(225.0, 400.0);
     glEnd();
+
+
+    // MARGENS
+
+        glColor3f(0.0, 0.0, 0.0); // preto
+        // margem esquerda da coluna esquerda
+        glBegin(GL_LINES);
+            glVertex2f(50.0, 300.0);
+            glVertex2f(50.0, 400.0);
+        glEnd();
+
+        // margem direita da coluna esquerda
+        glBegin(GL_LINES);
+            glVertex2f(150.0, 300.0);
+            glVertex2f(150.0, 400.0);
+        glEnd();
+
+
+        // margem esquerda da coluna direita
+        glBegin(GL_LINES);
+            glVertex2f(352.0, 300.0);
+            glVertex2f(352.0, 400.0);
+        glEnd();
+
+        // margem direita da coluna direita
+        glBegin(GL_LINES);
+            glVertex2f(450.0, 300.0);
+            glVertex2f(450.0, 400.0);
+        glEnd();
+
+        // margem superior
+        glBegin(GL_LINES);
+            glVertex2f(50.0, 300.0);
+            glVertex2f(450.0, 300.0);
+        glEnd();
+
+        // margem inferior
+        glBegin(GL_LINES);
+            glVertex2f(50.0, 400.0);
+            glVertex2f(450.0, 400.0);
+        glEnd();
 }
 
 
